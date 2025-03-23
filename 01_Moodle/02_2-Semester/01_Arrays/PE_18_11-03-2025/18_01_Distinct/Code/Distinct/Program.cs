@@ -28,35 +28,37 @@ namespace Distinct
             return input;
         }
 
-
-        static void Main(string[] args)
+        private static void Output(int[]output, string text)
         {
-            int anzNumber, input;
-            int[] numbers, output;
-            bool isTrue;
+            Console.Write($"{text,-12}");
+            for (int i = 0; i < output.Length; i++)
+            {
+                Console.Write($"{output[i]}");
+                if (i != output.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+        }
+        
+        static void Main()
+        {
+            int anzNumber;
+            int[] numbers;
             Console.WriteLine("Distinct");
             Console.WriteLine("**********************");
-
             //---------------------------------------------------------------------
             //Eingabe User
             anzNumber = IntInput("Please enter the count of numbers: ");
             numbers = new int[anzNumber];
             for (int i = 0; i < anzNumber; i++)
             {
-                input = IntInput($"Please enter {i + 1}. number: ");
-                numbers[i] = input;
+                numbers[i] = IntInput($"Please enter {i + 1}. number: ");
             }
             //---------------------------------------------------------------------
             //Ausgabe
-            Console.Write($"{"Input: ",-12}");
-            for (int i = 0; i < anzNumber; i++)
-            {
-                Console.Write($"{numbers[i]}");
-                if (i != anzNumber - 1)
-                {
-                    Console.Write(", ");
-                }
-            }
+            Output(numbers,"Input: ");
+
             Console.Write(" => The array is ");
             if (!DistinctTools.IsDistinct(numbers))
             {
@@ -64,27 +66,9 @@ namespace Distinct
             }
             Console.WriteLine("distinct");
 
-            Console.Write($"{"Distinct: ",-12}");
-            output = DistinctTools.Distinct(numbers);
-            for (int i = 0; i < output.Length; i++)
-            {
-                Console.Write($"{output[i]}");
-                if (i != output.Length - 1)
-                {
-                    Console.Write(", ");
-                }
-            }
+            Output(DistinctTools.Distinct(numbers), "Distinct: ");
             Console.WriteLine("");
-            Console.Write($"{"Duplicates: ",-12}");
-            output = DistinctTools.Duplicate(numbers);
-            for (int i = 0; i < output.Length; i++)
-            {
-                Console.Write($"{output[i]}");
-                if (i != output.Length - 1)
-                {
-                    Console.Write(", ");
-                }
-            }
+            Output(DistinctTools.Duplicate(numbers), "Duplicates: ");
             //---------------------------------------------------------------------
         }
     }
