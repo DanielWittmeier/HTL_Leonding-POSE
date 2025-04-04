@@ -3,8 +3,8 @@
 		<TargetFramework>net8.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="FluentAssertions" Version="8.1.1" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+		<PackageReference Include="FluentAssertions" Version="8.2.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
 		<PackageReference Include="xunit" Version="2.9.3" />
 		<PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
 			<PrivateAssets>all</PrivateAssets>
@@ -12,6 +12,6 @@
 		</PackageReference>
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\Intersect\Intersect.csproj" />
+	  <ProjectReference Include="..\GameOfLife\GameOfLife.csproj" />
 	</ItemGroup>
 </Project>
