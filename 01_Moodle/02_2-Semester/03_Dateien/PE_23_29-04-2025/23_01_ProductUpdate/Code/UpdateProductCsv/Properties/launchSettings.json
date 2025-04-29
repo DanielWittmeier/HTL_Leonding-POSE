@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UpdateProductCsv": {
+      "commandName": "Project",
+      "commandLineArgs": "products.csv 10"
+    }
+  }
+}
