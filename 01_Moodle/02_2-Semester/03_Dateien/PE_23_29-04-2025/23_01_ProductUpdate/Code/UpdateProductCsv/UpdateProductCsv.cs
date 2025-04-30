@@ -1,7 +1,7 @@
 ﻿/*--------------------------------------------------------------
-*				HTBLA-Leonding / Class: 1xHIF
+*				HTBLA-Leonding / Class: 4ABIFT
 *--------------------------------------------------------------
-*              Musterlösung-HA
+*              Dani Wittmeier
 *--------------------------------------------------------------
 * Description: UpdateProductCsv
 *--------------------------------------------------------------
@@ -19,56 +19,40 @@ namespace UpdateProductCsv
     {
         public static int Main(string[] args)
         {
-            //TODO: Implement Main method Check / Lesen / Aktualisieren / Speichern
             string filename;
             decimal percent;
-            int fehlercode;
 
-            if (!CheckArguments(args, out filename, out percent, out fehlercode))
+            if (!CheckArguments(args, out filename, out percent))
             {
                 return 1;
             }
 
             string[] csvfile = ReadCSVFiles(filename);
 
-            //File.Create(Path.GetFileNameWithoutExtension(args[0]) + ".$$$");
+            //Backup erstellen
             File.Delete(Path.GetFileNameWithoutExtension(args[0]) + ".bak");
             File.Move(filename, Path.GetFileNameWithoutExtension(args[0]) + ".bak");
 
+            //Neue Datei erstellen
             File.WriteAllLines(Path.GetFileNameWithoutExtension(args[0]) + ".$$$", UpdateCSVFile(csvfile, percent));
             File.Move(Path.GetFileNameWithoutExtension(args[0]) + ".$$$", Path.GetFileNameWithoutExtension(args[0]) + ".csv");
 
-            return 0; //0 heißt kein Fehler, 1 für Fehler
+            return 0;
         }
 
-        // TODO: Implement methods for Read, Update and Write Csv 
-        private static bool CheckArguments(string[] args, out string filename, out decimal percent, out int fehlercode)
+        private static bool CheckArguments(string[] args, out string filename, out decimal percent)
         {
             filename = "";
             percent = 0;
-            fehlercode = 0;
 
             if (args.Length != 2)
             {
-                fehlercode = 1;
                 return false;
             }
+
             filename = args[0];
-            if (!File.Exists(filename))
+            if (!File.Exists(filename) || Path.GetExtension(filename).ToUpper() != ".CSV" || !decimal.TryParse(args[1], CultureInfo.InvariantCulture, out percent))
             {
-                fehlercode = 2;
-                return false;
-            }
-
-            if (Path.GetExtension(filename).ToUpper() != ".CSV")
-            {
-                fehlercode = 3;
-                return false;
-            }
-
-            if (!decimal.TryParse(args[1], CultureInfo.InvariantCulture , out percent))
-            {
-                fehlercode = 4;
                 return false;
             }
 
@@ -85,13 +69,14 @@ namespace UpdateProductCsv
         {
             string[] newcsvfile = new string[csvfile.Length];
 
+            newcsvfile[0] = csvfile[0];
+
             for (int i = 1; i < csvfile.Length; i++) 
             {
                 Product.ConvertOneLine(csvfile[i], percent, out string productCode, out string description, out string taxClass, out decimal retail);
-                newcsvfile[i] = productCode + ";" + description + ";" + taxClass + ";" + retail;
+                newcsvfile[i] = productCode + ";" + description + ";" + taxClass + ";" + Math.Round(retail, 2).ToString(CultureInfo.InvariantCulture);
 
             }
-
 
             return newcsvfile;
         }
