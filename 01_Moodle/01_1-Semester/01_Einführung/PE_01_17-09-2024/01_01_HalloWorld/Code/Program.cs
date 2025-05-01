@@ -1,14 +1,14 @@
 ﻿/*--------------------------------------------------------------
  *				HTBLA-Leonding / Class: 4ABIFT
  *--------------------------------------------------------------
- *              Wittmeier Daniel
+ *              Wittmeier Dani
  *--------------------------------------------------------------
- * Description:
+ * Description: Eingabe von Name und Wohnort + Ausgabe
 
  *--------------------------------------------------------------
 */
 
-namespace Programmname
+namespace HelloWorld
 {
     using System;
 
@@ -16,7 +16,12 @@ namespace Programmname
     {
         static void Main()
         {
-
+            Console.WriteLine("Hello HTL Leonding");
+            Console.Write("Bitte geben Sie Ihren Namen ein: ");
+            string username = Console.ReadLine();
+            Console.Write("Bitte geben Sie Ihren Wohnort ein: ");
+            string place = Console.ReadLine();
+            Console.WriteLine($"Nice to see you {username} from {place}");
         }
     }
 }
