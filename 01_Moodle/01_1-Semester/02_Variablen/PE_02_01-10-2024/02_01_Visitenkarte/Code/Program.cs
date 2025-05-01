@@ -3,12 +3,12 @@
  *--------------------------------------------------------------
  *              Wittmeier Dani
  *--------------------------------------------------------------
- * Description: Eingabe von Name und Wohnort + Ausgabe
+ * Description:
 
  *--------------------------------------------------------------
 */
 
-namespace HelloWorld
+namespace Visitenkarte
 {
     using System;
 
@@ -16,12 +16,18 @@ namespace HelloWorld
     {
         static void Main()
         {
-            Console.WriteLine("Hello HTL Leonding");
+            string name, place;
             Console.Write("Bitte geben Sie Ihren Namen ein: ");
-            string username = Console.ReadLine();
+            name = Console.ReadLine();
             Console.Write("Bitte geben Sie Ihren Wohnort ein: ");
-            string place = Console.ReadLine();
-            Console.WriteLine($"Nice to see you {username} from {place}");
+            place = Console.ReadLine();
+
+            Console.WriteLine();
+            Console.WriteLine("************************");
+            Console.WriteLine($"*  {name,-20}*");
+            Console.WriteLine("************************");
+            Console.WriteLine($"*  {place,-20}*");
+            Console.WriteLine("************************");
         }
     }
 }
