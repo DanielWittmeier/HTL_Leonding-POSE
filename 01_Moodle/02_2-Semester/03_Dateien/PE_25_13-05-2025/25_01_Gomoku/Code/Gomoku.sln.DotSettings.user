@@ -1,0 +1,11 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=05be36fc_002D0fd6_002D4a96_002Dbf66_002D3061582cc013/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CheckWinner" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.CheckWinner&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.CheckNoWinner&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.SaveAndLoadGameEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.SaveAndLoadGame&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.GetStoneCountEmpty&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::39042080-1F87-4B84-92BB-7894A730C26D::net6.0-windows7.0::UnitTests.GomokuTests.SetStone&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
