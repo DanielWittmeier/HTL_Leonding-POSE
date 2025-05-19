@@ -36,4 +36,31 @@ public static class Tools
         //TODO If you need the method, implement it here
         throw new NotImplementedException();
     }
+
+    public static int DefineBoardSize(string text, int[] values)
+    {
+        bool isTrue;
+        int input;
+
+        do
+        {
+            Console.Write(text);
+            isTrue = int.TryParse(Console.ReadLine(), out input);
+            if (isTrue)
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    if (input == values[i])
+                    {
+                        return input;
+                    }
+                }
+                Console.WriteLine("Diese Boardgröße existiert nicht!");
+            }
+            else
+            {
+                Console.WriteLine("Ungültige Eingabe!");
+            }
+        } while (true);
+    }
 }
